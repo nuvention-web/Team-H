@@ -1,18 +1,33 @@
 <section class="mat-typography">
-    <div class="wildcat-colors"> 
-      <div style="text-align:center">
-        <h1>
+  <div class="wildcat-colors">
+    <div style="text-align:center">
+      <h1>
           Welcome to {{ title }}!
         </h1>
-      </div>
-      <div>
-        <mat-form-field>
-          <input matInput [(ngModel)]="ghId" placeholder="Enter a github org or user id"  value="toddwseattle" >
-        </mat-form-field>
-        <button mat-raised-button (click)="addGhId(ghId)">Add to List</button>
-      </div>
-      <app-id-list [idlist]="ghIds"></app-id-list>
     </div>
-    <div *ngIf="errorMessage" class="error">{{errorMessage}}</div>
-
+    <app-id-list [idlist]="ghIds"></app-id-list>
+  </div>
+  <div *ngIf="errorMessage" class="error">{{errorMessage}}</div>
+  <ngb-tabset>
+    <ngb-tab title="Search by user or organization name.">
+      <ng-template ngbTabContent>
+            <div>
+      <mat-form-field>
+        <input matInput [(ngModel)]="ghId" placeholder="Enter a github org or user id" value="toddwseattle">
+      </mat-form-field>
+      <button mat-raised-button (click)="addGhId(ghId)" class="">Add to List</button>
+    </div>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Search by repsoitory link.">
+      <ng-template ngbTabContent>
+            <div>
+      <mat-form-field>
+        <input matInput [(ngModel)]="ghId" placeholder="Enter a github org or user id" value="toddwseattle">
+      </mat-form-field>
+      <button mat-raised-button (click)="addGhId(ghId)" class="">Add to List</button>
+    </div>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
 </section>

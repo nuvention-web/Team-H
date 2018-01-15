@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { GitIdInfoService } from './git-id-info.service';
 import { AppComponent } from './app.component';
 import { IdListComponent } from './id-list/id-list.component';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import { IdListComponent } from './id-list/id-list.component';
     MatButtonModule,
     MatIconModule,
     MatListModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule.forRoot()
   ],
   providers: [GitIdInfoService],
   bootstrap: [AppComponent]
