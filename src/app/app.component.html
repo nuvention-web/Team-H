@@ -2,32 +2,40 @@
   <div class="wildcat-colors">
     <div style="text-align:center">
       <h1>
-          Welcome to {{ title }}!
+          {{ title }}
         </h1>
     </div>
     <app-id-list [idlist]="ghIds"></app-id-list>
   </div>
   <div *ngIf="errorMessage" class="error">{{errorMessage}}</div>
-  <ngb-tabset>
-    <ngb-tab title="Search by user or organization name.">
-      <ng-template ngbTabContent>
-            <div>
-      <mat-form-field>
-        <input matInput [(ngModel)]="ghId" placeholder="Enter a github org or user id" value="toddwseattle">
-      </mat-form-field>
-      <button mat-raised-button (click)="addGhId(ghId)" class="">Add to List</button>
-    </div>
-      </ng-template>
-    </ngb-tab>
-    <ngb-tab title="Search by repsoitory link.">
-      <ng-template ngbTabContent>
-            <div>
-      <mat-form-field>
-        <input matInput [(ngModel)]="ghId" placeholder="Enter a github org or user id" value="toddwseattle">
-      </mat-form-field>
-      <button mat-raised-button (click)="addGhId(ghId)" class="">Add to List</button>
-    </div>
-      </ng-template>
-    </ngb-tab>
-  </ngb-tabset>
+  <div class="container">
+    <ngb-tabset>
+      <ngb-tab title="Search by user or organization name.">
+        <ng-template ngbTabContent>
+          <div>
+            <mat-form-field>
+              <input matInput [(ngModel)]="ghId" placeholder="Enter a github org or user id" value="toddwseattle">
+            </mat-form-field>
+            <button mat-raised-button color="primary" (click)="addGhId(ghId)" class="">Add to List</button>
+            <button type="button" class="btn btn-outline-secondary" placement="bottom" ngbPopover="Simply enter a Github user name or organization name to search." popoverTitle="User or Organization Name">
+              Help
+            </button>
+          </div>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Search by repository link.">
+        <ng-template ngbTabContent>
+          <div>
+            <mat-form-field>
+              <input matInput [(ngModel)]="ghId" placeholder="Enter a github org or user id" value="toddwseattle">
+            </mat-form-field>
+            <button mat-raised-button color="primary" (click)="addGhId(ghId)" class="">Add to List</button>
+            <button type="button" class="btn btn-outline-secondary" placement="bottom" ngbPopover="Simply enter a repository link to search." popoverTitle="Repository Link">
+              Help
+            </button>
+          </div>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+  </div>
 </section>
