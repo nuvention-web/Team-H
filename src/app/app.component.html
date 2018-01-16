@@ -5,11 +5,10 @@
           {{ title }}
         </h1>
     </div>
-    <app-id-list [idlist]="ghIds"></app-id-list>
+    <div *ngIf="errorMessage" class="error">{{errorMessage}}</div>
   </div>
-  <div *ngIf="errorMessage" class="error">{{errorMessage}}</div>
-  <div class="container">
-    <ngb-tabset>
+  <div class="container" id="search-container">
+    <ngb-tabset justify="justified">
       <ngb-tab title="Search by user or organization name.">
         <ng-template ngbTabContent>
           <div>
@@ -37,5 +36,6 @@
         </ng-template>
       </ngb-tab>
     </ngb-tabset>
+    <app-id-list [idlist]="ghIds"></app-id-list>
   </div>
 </section>

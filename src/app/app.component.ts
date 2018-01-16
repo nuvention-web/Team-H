@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Git Status - Team H';
+  title = 'Git Status Updates - Team H';
   ghId = '';
   ghIds: GitIdInfo[] = [];
   private getGitsub: Subscription;
