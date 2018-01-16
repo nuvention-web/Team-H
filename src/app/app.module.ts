@@ -8,6 +8,7 @@ import { GitIdInfoService } from './git-id-info.service';
 import { AppComponent } from './app.component';
 import { IdListComponent } from './id-list/id-list.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MatIconModule,
     MatListModule,
     HttpClientModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AngularFontAwesomeModule
   ],
   providers: [GitIdInfoService],
   bootstrap: [AppComponent]

@@ -1,22 +1,21 @@
 <section class="mat-typography">
-  <div class="wildcat-colors">
-    <div style="text-align:center">
-      <h1>
-          {{ title }}
-        </h1>
-    </div>
+  <!-- Top, welcome container and information -->
+  <div class="container" id="top-container">
+    <i class="fa fa-github fa-5x" aria-hidden="true"></i>
+      <h1>{{ title }}</h1>
     <div *ngIf="errorMessage" class="error">{{errorMessage}}</div>
   </div>
+  <!-- TABS & Search -->
   <div class="container" id="search-container">
     <ngb-tabset justify="justified">
       <ngb-tab title="Search by user or organization name.">
         <ng-template ngbTabContent>
           <div>
             <mat-form-field>
-              <input matInput [(ngModel)]="ghId" placeholder="Enter a github org or user id" value="toddwseattle">
+              <input matInput [(ngModel)]="ghId" placeholder="Enter a GitHub org or user id" value="toddwseattle">
             </mat-form-field>
             <button mat-raised-button color="primary" (click)="getRepo(ghId)" class="">Add to List</button>
-            <button type="button" class="btn btn-outline-secondary" placement="bottom" ngbPopover="Simply enter a Github user name or organization name to search." popoverTitle="User or Organization Name">
+            <button type="button" class="btn btn-outline-secondary" placement="bottom" ngbPopover="Simply enter a GitHub user name or organization name to search." popoverTitle="User or Organization Name">
               Help
             </button>
           </div>
@@ -37,5 +36,11 @@
       </ngb-tab>
     </ngb-tabset>
     <app-id-list [idlist]="ghIds"></app-id-list>
+  </div>
+  <div class="container" id="footer-container">
+              <button type="button" id="homeInfoButton" class="btn btn-outline-secondary" placement="right"
+        ngbPopover="This web app produces a github status report. It uses issues opened and completed in the last week to output a well formated status report." popoverTitle="What is this app?">
+    <i class="fa fa-info-circle fa-3x" id="homeInfo" aria-hidden="true"></i>
+</button>
   </div>
 </section>

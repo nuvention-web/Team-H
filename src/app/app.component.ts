@@ -10,7 +10,7 @@ import { RepoInfo } from './repo';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Git Status Updates - Team H';
+  title = 'GitHub Status Updates';
   ghId = '';
   ghIds: GitIdInfo[] = [];
   repos: RepoInfo[] = [];
