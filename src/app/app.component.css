@@ -4,12 +4,15 @@
     text-align: center;
     border-radius: 20px;
     padding-top: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 5px;
     margin-bottom: 10px;
 }
 .error {
     background-color: red;
-    color: yellow;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
 }
 
 #search-container, #footer-container {
@@ -20,3 +23,13 @@
 	border-color: transparent;
 	color: #4E2A84;
 }
+
+#helpButton {
+	color: black;
+}
+
+/* override placeholder color */
+::ng-deep .mat-form-field-placeholder{
+  color: #4E2A84;
+}
+
