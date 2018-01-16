@@ -15,7 +15,7 @@
             <mat-form-field>
               <input matInput [(ngModel)]="ghId" placeholder="Enter a github org or user id" value="toddwseattle">
             </mat-form-field>
-            <button mat-raised-button color="primary" (click)="addGhId(ghId)" class="">Add to List</button>
+            <button mat-raised-button color="primary" (click)="getRepo(ghId)" class="">Add to List</button>
             <button type="button" class="btn btn-outline-secondary" placement="bottom" ngbPopover="Simply enter a Github user name or organization name to search." popoverTitle="User or Organization Name">
               Help
             </button>

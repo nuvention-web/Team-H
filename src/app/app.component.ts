@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { GitIdInfo } from './github-id';
 import { GitIdInfoService } from './git-id-info.service';
 import { Subscription } from 'rxjs/Subscription';
+import { RepoInfo } from './repo';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ export class AppComponent {
   title = 'Git Status Updates - Team H';
   ghId = '';
   ghIds: GitIdInfo[] = [];
+  repos: RepoInfo[] = [];
   private getGitsub: Subscription;
   errorMessage = null;
 
@@ -27,5 +29,19 @@ export class AppComponent {
         this.errorMessage = error.message;
       });
       this.ghId = '';
-  }
+    }
+
+
+      getRepo(toadd: string) {
+        this.errorMessage = null;
+        this.getGitsub = this.ids.GetRepoInfo(toadd).subscribe( info => {
+          this.repos.push(info);
+          },
+          error => {
+            console.log('error:', error);
+            this.errorMessage = error.message;
+          });
+          
+      }
+  
 }
