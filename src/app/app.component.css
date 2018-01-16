@@ -28,6 +28,11 @@
 	color: black;
 }
 
+#appTitle {
+	margin-bottom: 0;
+	font-weight: 900;
+}
+
 /* override placeholder color */
 ::ng-deep .mat-form-field-placeholder{
   color: #4E2A84;
