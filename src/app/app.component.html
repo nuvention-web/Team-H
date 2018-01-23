@@ -57,7 +57,7 @@
                 <ng-template ngbPanelContent>
                   <div class="issue_list">
                     <mat-list-item *ngFor="let issue of issues">
-                      <div class="issue_title" *ngIf="issue.state == 'open'">{{issue.title}}
+                      <div class="issue_title" *ngIf="issue.state == 'open'"><strong>{{issue.title}}</strong>
                         <p class="ittile"> {{issue.body}}
                           <br> </p>
                       </div>
@@ -69,7 +69,7 @@
                 <ng-template ngbPanelContent>
                   <div class="issue_list">
                     <mat-list-item *ngFor="let issue of issues">
-                      <div class="issue_title" *ngIf="issue.state == 'closed'">{{issue.title}}
+                      <div class="issue_title" *ngIf="issue.state == 'closed'"><strong>{{issue.title}}</strong>
                         <p class="ibody">
                           {{issue.body}}
                           <br>
@@ -108,7 +108,7 @@
                 <ng-template ngbPanelContent>
                   <div class="issue_list">
                     <mat-list-item *ngFor="let issue of issues">
-                      <div class="issue_title" *ngIf="issue.state == 'open'">{{issue.title}}
+                      <div class="issue_title" *ngIf="issue.state == 'open'"><strong>{{issue.title}}</strong>
                         <p class="ittile"> {{issue.body}}
                           <br> </p>
                       </div>
@@ -120,7 +120,7 @@
                 <ng-template ngbPanelContent>
                   <div class="issue_list">
                     <mat-list-item *ngFor="let issue of issues">
-                      <div class="issue_title" *ngIf="issue.state == 'closed'">{{issue.title}}
+                      <div class="issue_title" *ngIf="issue.state == 'closed'"><strong>{{issue.title}}</strong>
                         <p class="ibody">
                           {{issue.body}}
                           <br>
