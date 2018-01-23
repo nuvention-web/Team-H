@@ -32,6 +32,7 @@
               Help
             </button>
           </div>
+          <hr>
           <br/>
           <aside id="buttons">
             <div id="1">
@@ -45,8 +46,9 @@
             </div>
           </aside>
           <section id="issues-data">
-            <textarea rows="4" cols="75">Manually type in any updates for this milestone...
-            </textarea>
+            <mat-form-field>
+              <input matInput placeholder="Update milestone" value="Milestone: ">
+            </mat-form-field>
             <br>
             <h3 class="repo_description"> Name:</h3>
             <h3 class="repo_name">{{repoName()}}</h3>
@@ -93,10 +95,12 @@
               Help
             </button>
           </div>
+          <hr>
           <br/>
           <section id="issues-data-centered">
-            <textarea rows="4" cols="75">Manually type in any updates for this milestone...
-            </textarea>
+            <mat-form-field>
+              <input matInput placeholder="Update milestone" value="Milestone: ">
+            </mat-form-field>
             <h3 class="repo_description"> Name:</h3>
             <h3 class="repo_name">{{repoName()}}</h3>
             <ngb-accordion #acc="ngbAccordion">
