@@ -21,13 +21,6 @@
   text-align: center;
 }
 
-.repo_description {
-
-  font-size: 20px;
-  text-decoration: underline;
-  font-weight: bold;
-}
-
 
 
 #homeInfoButton {
@@ -127,13 +120,19 @@ h1 {
 }
 
 
-.repo_description {
+.repo_description, .repo_name {
   margin-top: 3.5%;
   font-weight: 900;
   color: #4E2A84;
   font-size: 36px;
   margin-bottom: 3.5%;
+  text-align: center;
 }
+
+.repo_name {
+    color: black;
+}
+
 
 
 /* override placeholder color */

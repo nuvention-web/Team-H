@@ -7,16 +7,16 @@
   </div>
   <!-- TABS & Search -->
   <div class="container" id="search-container">
+    <div class="container" id="footer-container">
+      <button type="button" id="homeInfoButton" class="btn btn-outline-secondary" placement="top" ngbPopover="This web app produces a GitHub status report. It uses issues opened and completed in the last week to output a well formated status report." popoverTitle="What is this app?">
+        <i class="fa fa-info-circle fa-3x" id="homeInfo" aria-hidden="true"></i>
+      </button>
+    </div>
     <!-- Error message -->
     <div *ngIf="errorMessage">
       <ngb-alert [dismissible]="false">
         <strong>Error!</strong> {{errorMessage}}
       </ngb-alert>
-    </div>
-    <div class="container" id="footer-container">
-      <button type="button" id="homeInfoButton" class="btn btn-outline-secondary" placement="top" ngbPopover="This web app produces a GitHub status report. It uses issues opened and completed in the last week to output a well formated status report." popoverTitle="What is this app?">
-        <i class="fa fa-info-circle fa-3x" id="homeInfo" aria-hidden="true"></i>
-      </button>
     </div>
     <!-- tabs -->
     <ngb-tabset justify="justified">
@@ -48,34 +48,36 @@
             <textarea rows="4" cols="75">Manually type in any updates for this milestone...
             </textarea>
             <br>
-            <h3 class="repo_description">
-
-                  Name:  {{repoName()}}
-                 
-                  
-                  
-                 </h3>
-            <p class="title">Completed stories:</p>
-            <div id="issue_list">
-              <mat-list-item *ngFor="let issue of issues">
-                <div class="issue_title" *ngIf="issue.state == 'open'">
-                  <p class="ittile"> {{issue.title}}
-                    <br>
-                  </p>
-                  <p class="ibody">
-                    {{issue.body}}
-                  </p>
-                </div>
-              </mat-list-item>
-            </div>
-            <p class="title"> Stories for next milestone:</p>
-            <div id="issue_list">
-              <mat-list-item *ngFor="let issue of issues">
-                <div class="issue_title" *ngIf="issue.state == 'closed'">{{issue.title}} {{issue.body}}
-                  <br />
-                </div>
-              </mat-list-item>
-            </div>
+            <h3 class="repo_description"> Name:</h3>
+            <h3 class="repo_name">{{repoName()}}</h3>
+            <ngb-accordion #acc="ngbAccordion">
+              <ngb-panel id="toggle-1 storyAccordians" title="Completed stories">
+                <ng-template ngbPanelContent>
+                  <div class="issue_list">
+                    <mat-list-item *ngFor="let issue of issues">
+                      <div class="issue_title" *ngIf="issue.state == 'open'">{{issue.title}}
+                        <p class="ittile"> {{issue.body}}
+                          <br> </p>
+                      </div>
+                    </mat-list-item>
+                  </div>
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel id="toggle-2 storyAccordians" title="Stories for next milestone">
+                <ng-template ngbPanelContent>
+                  <div class="issue_list">
+                    <mat-list-item *ngFor="let issue of issues">
+                      <div class="issue_title" *ngIf="issue.state == 'closed'">{{issue.title}}
+                        <p class="ibody">
+                          {{issue.body}}
+                          <br>
+                        </p>
+                      </div>
+                    </mat-list-item>
+                  </div>
+                </ng-template>
+              </ngb-panel>
+            </ngb-accordion>
           </section>
         </ng-template>
       </ngb-tab>
@@ -95,13 +97,8 @@
           <section id="issues-data-centered">
             <textarea rows="4" cols="75">Manually type in any updates for this milestone...
             </textarea>
-            <h3 class="repo_description">
-
-           Name:  {{repoName()}}
-          
-           
-           
-          </h3>
+            <h3 class="repo_description"> Name:</h3>
+            <h3 class="repo_name">{{repoName()}}</h3>
             <ngb-accordion #acc="ngbAccordion">
               <ngb-panel id="toggle-1 storyAccordians" title="Completed stories">
                 <ng-template ngbPanelContent>
