@@ -33,21 +33,29 @@
 #homeInfoButton {
   border-color: transparent;
   color: #4E2A84;
+  margin-bottom: 2%;
 }
 
 #helpButton {
   color: black;
 }
 
-#issues-data {
+#storyAccordians {
+    padding-bottom: 2.5%;
+}
 
-  border: 4px;
+#issues-data {
+  border: 20px;
   border-color: black;
-  background-color: burlywood;
   margin-left: 400px;
   padding: 2em;
   text-align: left;
   font-size: 16px;
+}
+
+#issues-data-centered {
+  border: 20px;
+  border-color: black;
 }
 
 form {
