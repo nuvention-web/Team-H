@@ -1,5 +1,3 @@
-
-
 <section class="mat-typography">
   <!-- Top, welcome container and information -->
   <div class="container" id="top-container">
@@ -20,6 +18,7 @@
       <ngb-tab title="Search by user or organization name">
         <ng-template ngbTabContent>
           <div>
+            <br/>
             <mat-form-field>
               <input matInput [(ngModel)]="ghId" placeholder="Enter a GitHub org or user id" value="toddwseattle">
             </mat-form-field>
@@ -28,85 +27,57 @@
               Help
             </button>
           </div>
-        
-       
-
-          
-          <aside id = "buttons">
-          <div  id ="1"  >
-            <mat-list id = "horizontal-list">
-              <mat-list-item  *ngFor="let r1 of repolist">
-                  
-                  <br> 
-                  <button id="repolist"  (click)="getRepo(r1.full_name)" >{{r1.name}} </button>
-
-                  
-                  
+          <br/>
+          <aside id="buttons">
+            <div id="1">
+              <h1>Repositories:</h1>
+              <mat-list id="horizontal-list">
+                <mat-list-item *ngFor="let r1 of repolist">
+                  <br>
+                  <button id="repolist" (click)="getRepo(r1.full_name)">{{r1.name}} </button>
                 </mat-list-item>
               </mat-list>
-              
-          </div>
-        </aside>
-
-          <section id = "issues-data">
-
-
-              
-                <textarea rows="4" cols="75">Manually type in any updates for this milestone...
-                </textarea>
-                <br>
-
-              <h3 class="repo_description">
+            </div>
+          </aside>
+          <section id="issues-data">
+            <textarea rows="4" cols="75">Manually type in any updates for this milestone...
+            </textarea>
+            <br>
+            <h3 class="repo_description">
 
                   Name:  {{repoName()}}
                  
                   
                   
                  </h3>
-
-           <p class="title">Completed stories:</p>
-    
-          <div id="issue_list">
-
-            <mat-list-item *ngFor="let issue of issues">
-
-              
-              <div class="issue_title" *ngIf="issue.state == 'open'" >
-                
-                <p class="ittile"> {{issue.title}}
-                  <br>
-                 </p>
-
-              <p class="ibody">
-              {{issue.body}}
-              </p>
-
-              </div>
-            </mat-list-item>
-          </div>
-      
-          <p class="title"> Stories for next milestone:</p>
-          <div id="issue_list">
-            <mat-list-item *ngFor="let issue of issues">
-              <div class="issue_title" *ngIf="issue.state == 'closed'" >{{issue.title}}
-              
-              {{issue.body}}
-              <br /> 
-              </div>
-            </mat-list-item>
-          </div>
-
-        
-
-        </section>
-
-      
-          
+            <p class="title">Completed stories:</p>
+            <div id="issue_list">
+              <mat-list-item *ngFor="let issue of issues">
+                <div class="issue_title" *ngIf="issue.state == 'open'">
+                  <p class="ittile"> {{issue.title}}
+                    <br>
+                  </p>
+                  <p class="ibody">
+                    {{issue.body}}
+                  </p>
+                </div>
+              </mat-list-item>
+            </div>
+            <p class="title"> Stories for next milestone:</p>
+            <div id="issue_list">
+              <mat-list-item *ngFor="let issue of issues">
+                <div class="issue_title" *ngIf="issue.state == 'closed'">{{issue.title}} {{issue.body}}
+                  <br />
+                </div>
+              </mat-list-item>
+            </div>
+          </section>
         </ng-template>
       </ngb-tab>
       <ngb-tab title="Search by repository link">
         <ng-template ngbTabContent>
           <div>
+            <br/>
             <mat-form-field>
               <input matInput [(ngModel)]="ghId" placeholder="Enter a GitHub org or user id" value="toddwseattle">
             </mat-form-field>
@@ -115,61 +86,48 @@
               Help
             </button>
           </div>
-          <section id = "issues-data">
-
-              <textarea rows="4" cols="75">Manually type in any updates for this milestone...
-                </textarea>
-          <h3 class="repo_description">
+          <br/>
+          <section id="issues-data">
+            <textarea rows="4" cols="75">Manually type in any updates for this milestone...
+            </textarea>
+            <h3 class="repo_description">
 
            Name:  {{repoName()}}
           
            
            
           </h3>
-
-       <!--   <p>  Current milestone: {{ printMilestones() }}</p>
+            <!--   <p>  Current milestone: {{ printMilestones() }}</p>
          <p>  Next milestone: {{ printMilestones() }}</p> -->
-          
-    
-    <div class="issue_list">
-        <p class="title">Completed stories:</p>
-      <mat-list-item *ngFor="let issue of issues">
-        <div class="issue_title" *ngIf="issue.state == 'open'" >{{issue.title}}
-        
-        <p class="ittile">  {{issue.body}} <br> </p>
-        </div>
-      </mat-list-item>
-    </div>
-
-    
-    <div class="issue_list">
-        <p class="title">Stories for next milestone:</p>
-      <mat-list-item *ngFor="let issue of issues">
-        <div class="issue_title" *ngIf="issue.state == 'closed'" >{{issue.title}}
-            <p class="ibody">
-        {{issue.body}}
-        <br>
-        </p>
-        </div>
-      </mat-list-item>
-    </div>
-
-  </section>
-
+            <div class="issue_list">
+              <p class="title">Completed stories:</p>
+              <mat-list-item *ngFor="let issue of issues">
+                <div class="issue_title" *ngIf="issue.state == 'open'">{{issue.title}}
+                  <p class="ittile"> {{issue.body}}
+                    <br> </p>
+                </div>
+              </mat-list-item>
+            </div>
+            <div class="issue_list">
+              <p class="title">Stories for next milestone:</p>
+              <mat-list-item *ngFor="let issue of issues">
+                <div class="issue_title" *ngIf="issue.state == 'closed'">{{issue.title}}
+                  <p class="ibody">
+                    {{issue.body}}
+                    <br>
+                  </p>
+                </div>
+              </mat-list-item>
+            </div>
+          </section>
         </ng-template>
       </ngb-tab>
     </ngb-tabset>
-    
   </div>
-  
-
-
+  <hr>
   <div class="container" id="footer-container">
     <button type="button" id="homeInfoButton" class="btn btn-outline-secondary" placement="bottom" ngbPopover="This web app produces a GitHub status report. It uses issues opened and completed in the last week to output a well formated status report." popoverTitle="What is this app?">
       <i class="fa fa-info-circle fa-3x" id="homeInfo" aria-hidden="true"></i>
     </button>
   </div>
 </section>
-
-
-
