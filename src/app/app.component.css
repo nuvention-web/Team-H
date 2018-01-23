@@ -19,6 +19,16 @@
 	text-align: center;
 }
 
+.repo_description {
+
+    font-size: 20px;
+    text-decoration: underline;
+    font-weight: bold;
+
+}
+
+
+
 #homeInfoButton {
 	border-color: transparent;
 	color: #4E2A84;
@@ -32,6 +42,91 @@
 	margin-bottom: 0;
 	font-weight: 900;
 }
+
+#issues-data{
+    
+        border: 4px;
+        border-color: black;
+        background-color: burlywood;
+        margin-left: 400px;
+        padding: 2em;
+        text-align: left;
+        font-size: 16px;
+        
+       
+    
+}
+
+form {
+
+    margin-left: 400px;
+    padding: 1em;
+}
+
+h1 {
+    /* Set "my-sec-counter" to 0 */
+    counter-reset: my-sec-counter;
+}
+
+#buttons{
+    float: left;
+    padding: 1em;
+    overflow: hidden;
+
+}
+
+#issue_title{
+
+    margin: 0 auto;
+    margin-top: 25px;
+    padding: none;
+    border: 10px;
+    border-color: dimgray;
+ 
+}
+
+#repolist{
+    background-color: #4E2A84;
+    border: 3px;
+    color: white;
+    padding: 4px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+
+}
+
+.ititle:before {
+    /* Increment "my-sec-counter" by 1 */
+    counter-increment: my-sec-counter;
+    content: "Section " counter(my-sec-counter) ". ";
+}
+
+.title{
+
+    font-size: 20px;
+
+}
+
+.ititle {
+
+   
+    text-align: left;
+    font-weight: bold;
+}
+
+.ibody{
+
+    font-size: 12px;
+    
+
+}
+
+
 
 /* override placeholder color */
 ::ng-deep .mat-form-field-placeholder{

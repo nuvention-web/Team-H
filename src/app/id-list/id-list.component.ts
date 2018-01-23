@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { GitIdInfo } from '../github-id';
+import { RepoInfo } from '../repo';
 
 @Component({
   selector: 'app-id-list',
@@ -8,13 +8,12 @@ import { GitIdInfo } from '../github-id';
 })
 export class IdListComponent implements OnInit {
 
-  ghIds: GitIdInfo[] = [];
-  @Input() idlist: GitIdInfo[];
+  repos: RepoInfo[] = [];
+  @Input() repolist: RepoInfo[];
+  
   constructor() { }
 
-  toggleFavorite(favid: GitIdInfo) {
-    favid.favorite = !favid.favorite;
-  }
+  
   ngOnInit() {
   }
 
